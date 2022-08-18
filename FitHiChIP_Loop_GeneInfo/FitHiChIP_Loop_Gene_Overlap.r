@@ -25,7 +25,7 @@ chrcol <- 1 ## user can edit depending on the input GTF file
 TSScol <- 2 ## user can edit depending on the input GTF file
 
 ## column containing the gene name information in the GTF file
-geneNamecol <- 3 ## user can edit depending on the input GTF file
+geneNamecol <- 8 ## user can edit depending on the input GTF file
 
 ## offset (in bp) between TSS and the FitHiChIP loop anchors 
 ## considered for overlap
@@ -82,7 +82,7 @@ if (length(ov2$A_AND_B) > 0) {
 	colnames(df2) <- c('chr', 'TSS', 'geneName', 'Bin1Chr', 'Bin1Start', 'Bin1End', 'Bin2Chr', 'Bin2Start', 'Bin2End', CN[7:length(CN)])
 }
 
-if (length(ov1$A_AND_B) > 0) & (length(ov2$A_AND_B) > 0) {
+if ((length(ov1$A_AND_B) > 0) & (length(ov2$A_AND_B) > 0)) {
 	finalDF <- rbind.data.frame(df1, df2)
 } else if (length(ov1$A_AND_B) > 0) {
 	finalDF <- df1
